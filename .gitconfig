@@ -1,19 +1,27 @@
 [core]
-	excludesfile = /Users/stefbastiaansen/.gitignore
+	#global ignoring
+	excludesfile = ~/.gitignore
 [user]
 	name = Stef Bastiaansen
 	email = stef.bastiaansen@wijs.be
 
 [alias]
-  a = add
-  ch = checkout
-  co = commit -am
-  c = commit -am
-  s = status
-  b = branch
-  pl = pull
-  ps = push
-  m = merge
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  type = cat-file -t
-  dump = cat-file -p
+	a = add
+	ch = checkout
+	co = commit -am
+	c = commit -am
+	s = status --short --branch
+	b = branch
+	pl = pull
+	ps = push
+ 	m = merge
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+
+[color]
+	ui = auto
+
+[merge]
+	log = true
+
