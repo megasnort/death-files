@@ -19,6 +19,8 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+source ~/.symfony2_autocomplete.bash
+
 #show the current branch in the prompt
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -29,6 +31,7 @@ export PS1="\u \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 #This commamd allow for a very special and short version of the git command. Instead of typing "git" I can now type "g". Which is shorter.
 alias g='git'
+alias ac='app/console'
 
 #clear cache in Fork CMS
 alias cc='./tools/remove_cache'
@@ -44,3 +47,4 @@ function tlpush_staging() {
         export LANG="nl_NL.UTF-8";
         git push fortrabbit_staging master
 }
+
