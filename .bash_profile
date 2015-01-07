@@ -13,6 +13,7 @@ export PATH=~/.composer/vendor/bin/:$PATH
 export PATH=~/wijs_scripts/:$PATH
 export PATH=/opt/local/bin/:$PATH
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+export PATH=/usr/local/php5/bin:$PATH
 
 #use git autocompletion
 if [ -f ~/.git-completion.bash ]; then
@@ -48,3 +49,15 @@ function tlpush_staging() {
         git push fortrabbit_staging master
 }
 
+
+# who listens to my itunes
+function itns() {
+	lsof +D ~/Music/iTunes/iTunes\ Music/ -i | grep iTunes
+}
+
+#reinit a symfony project
+function sfreset() {
+	app/console doctrine:schema:update --force
+	app/console doctrine:fixtures:load -n
+	app/console cache:clear
+}
