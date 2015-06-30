@@ -13,6 +13,9 @@ export PATH=~/.composer/vendor/bin/:$PATH
 export PATH=~/wijs_scripts/:$PATH
 export PATH=/opt/local/bin/:$PATH
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+export PATH=/usr/local/go/bin:$PATH
+export PATH=~/bin/:$PATH
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 #use git autocompletion
 if [ -f ~/.git-completion.bash ]; then
@@ -37,23 +40,12 @@ alias ac='app/console'
 alias cc='./tools/remove_cache'
 
 
-#custom stuff for deploying to a fortrabbit server
-function tlpush_production() {
-	export LANG="nl_NL.UTF-8";
-	git push fortrabbit_production master
+function plnrr() {
+	app/console doctrine:schema:update --force
+	app/console doctrine:generate:entities MegasnortPlnrBundle
+	app/console doctrine:fixtures:load -n
 }
 
-function tlpush_staging() {
-        export LANG="nl_NL.UTF-8";
-        git push fortrabbit_staging master
-}
-
-
-##
-# Your previous /Users/stef/.bash_profile file was backed up as /Users/stef/.bash_profile.macports-saved_2014-12-05_at_23:24:45
-##
-
-# MacPorts Installer addition on 2014-12-05_at_23:24:45: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
-
+#python env
+export WORKON_HOME=~/Envs
+source /usr/local/bin/virtualenvwrapper.sh
