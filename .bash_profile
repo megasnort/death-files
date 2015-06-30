@@ -1,3 +1,5 @@
+export NVM_DIR="/Users/stefbastiaansen/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 #show a magnificent path
 function path(){
@@ -33,22 +35,15 @@ export PS1="\u \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 #This commamd allow for a very special and short version of the git command. Instead of typing "git" I can now type "g". Which is shorter.
 alias g='git'
+
 alias ac='app/console'
+alias pm='python manage.py '
+
+alias sar='sudo apachectl restart'
 
 #clear cache in Fork CMS
 alias cc='./tools/remove_cache'
 
-
-#custom stuff for deploying to a fortrabbit server
-function tlpush_production() {
-	export LANG="nl_NL.UTF-8";
-	git push fortrabbit_production master
-}
-
-function tlpush_staging() {
-        export LANG="nl_NL.UTF-8";
-        git push fortrabbit_staging master
-}
 
 # who listens to my itunes
 function itns() {
@@ -62,3 +57,4 @@ function sfreset() {
 	app/console cache:clear
 }
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
