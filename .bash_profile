@@ -15,10 +15,9 @@ export PATH=~/.composer/vendor/bin/:$PATH
 export PATH=~/wijs_scripts/:$PATH
 export PATH=/opt/local/bin/:$PATH
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-export PATH=/usr/local/go/bin:$PATH
-export PATH=~/bin/:$PATH
 export PATH=/usr/local/php5/bin:$PATH
 export PATH=~/bin/:$PATH
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
 #use git autocompletion
 if [ -f ~/.git-completion.bash ]; then
@@ -36,7 +35,7 @@ parse_git_branch() {
 export PS1="\u \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 #fix for mysql and python
-export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
+# export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 
 #This commamd allow for a very special and short version of the git command. Instead of typing "git" I can now type "g". Which is shorter.
 alias g='git'
@@ -44,7 +43,10 @@ alias g='git'
 alias ac='app/console'
 alias pm='python manage.py '
 
-alias sar='sudo apachectl restart'
+alias sakg='sudo apachectl -k graceful'
+
+alias sonar-qube='/usr/local/sonarqube/bin/macosx-universal-64/sonar.sh'
+alias sonar-runner='/usr/local/sonar-runner/bin/sonar-runner'
 
 #clear cache in Fork CMS
 alias cc='./tools/remove_cache'
@@ -73,3 +75,8 @@ function sfreset() {
 }
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export JAVA_HOME=/usr/bi
