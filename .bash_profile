@@ -27,7 +27,6 @@ function plnrr() {
 #generate path
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/mysql/bin
 export PATH=/usr/local/php5/bin:$PATH
-export PATH=/usr/local/sonar-runner/bin:$PATH
 
 export PATH=~/.composer/vendor/bin/:$PATH
 export PATH=~/wijs_scripts/:$PATH
@@ -38,7 +37,9 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
 # Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH=/usr/local/heroku/bin:$PATH
+
+export SONAR_RUNNER_HOME=/usr/local/sonar-runner
 
 # fix for mysql and python
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
@@ -60,12 +61,11 @@ source /usr/local/bin/virtualenvwrapper.sh
 alias g='git'
 alias ac='app/console'
 alias pm='python manage.py '
-
+alias sonar-runner='/usr/local/sonar-runner/bin/sonar-runner'
 
 alias sakg='sudo apachectl -k graceful'
 alias sar='sudo apachectl restart'
 alias sonar-qube='/usr/local/sonarqube/bin/macosx-universal-64/sonar.sh'
-alias sonar-runner=''
 alias cc='./tools/remove_cache' #FORK
 
 
