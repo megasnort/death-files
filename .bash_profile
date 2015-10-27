@@ -31,35 +31,50 @@ function mkpostgres() {
 
 #generate path
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/mysql/bin
+export PATH=/usr/local/php5/bin:$PATH
+
 export PATH=~/.composer/vendor/bin/:$PATH
 export PATH=~/wijs_scripts/:$PATH
+<<<<<<< HEAD
 export PATH=/opt/local/bin/:$PATH
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-export PATH=/usr/local/go/bin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH=~/bin/:$PATH
 export PATH=/usr/local/php5/bin:$PATH
-export PATH=~/bin/:$PATH
 
-#use git autocompletion
+# Added by the Heroku Toolbelt
+export PATH=/usr/local/heroku/bin:$PATH
+
+export SONAR_RUNNER_HOME=/usr/local/sonar-runner
+
+# fix for mysql and python
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
+
+#python env
+export WORKON_HOME=~/Envs
+
+
+# use git autocompletion
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
 source ~/.symfony2_autocomplete.bash
 
-#fix for mysql and python
-export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 
-#python env
-export WORKON_HOME=~/Envs
 source /usr/local/bin/virtualenvwrapper.sh
 
 alias g='git'
 alias ac='app/console'
 alias pm='python manage.py '
+alias sonar-runner='/usr/local/sonar-runner/bin/sonar-runner'
+
+alias sakg='sudo apachectl -k graceful'
 alias sar='sudo apachectl restart'
+alias sonar-qube='/usr/local/sonarqube/bin/macosx-universal-64/sonar.sh'
 alias cc='./tools/remove_cache' #FORK
+
 
 # PROMPT
 #show the current branch in the prompt
@@ -75,3 +90,5 @@ export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+
