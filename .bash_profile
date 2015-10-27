@@ -24,6 +24,11 @@ function plnrr() {
     app/console doctrine:fixtures:load -n
 }
 
+function mkpostgres() {
+    createuser --pwprompt $1
+    createdb -O$1 -Eutf8 $1
+}
+
 #generate path
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/mysql/bin
 export PATH=~/.composer/vendor/bin/:$PATH
@@ -31,6 +36,7 @@ export PATH=~/wijs_scripts/:$PATH
 export PATH=/opt/local/bin/:$PATH
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 export PATH=/usr/local/go/bin:$PATH
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH=~/bin/:$PATH
 export PATH=/usr/local/php5/bin:$PATH
 export PATH=~/bin/:$PATH
