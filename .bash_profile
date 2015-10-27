@@ -30,23 +30,19 @@ function mkpostgres() {
 }
 
 #generate path
+export PATH=~/bin/:$PATH
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/mysql/bin
 export PATH=/usr/local/php5/bin:$PATH
 
 export PATH=~/.composer/vendor/bin/:$PATH
 export PATH=~/wijs_scripts/:$PATH
-<<<<<<< HEAD
 export PATH=/opt/local/bin/:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
-export PATH=~/bin/:$PATH
+
 export PATH=/usr/local/php5/bin:$PATH
 
-# Added by the Heroku Toolbelt
-export PATH=/usr/local/heroku/bin:$PATH
-
-export SONAR_RUNNER_HOME=/usr/local/sonar-runner
 
 # fix for mysql and python
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
