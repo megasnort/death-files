@@ -34,13 +34,6 @@ export PATH=~/bin/:$PATH
 export PATH=/opt/local/bin/:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
-
-# Added by the Heroku Toolbelt
-export PATH=/usr/local/heroku/bin:$PATH
-
-export SONAR_RUNNER_HOME=/usr/local/sonar-runner
-
 # fix for mysql and python
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 
@@ -55,6 +48,8 @@ fi
 
 source ~/.symfony2_autocomplete.bash
 
+
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 
 source /usr/local/bin/virtualenvwrapper.sh
 
@@ -78,10 +73,14 @@ parse_git_branch() {
 export PS1="\u \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 
-#NVM
-export NVM_DIR="~/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" 
+export GOPATH=~/Go
+export PATH=$PATH:$GOPATH/bin
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+#NVM
+#export NVM_DIR="~/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" 
+
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 
