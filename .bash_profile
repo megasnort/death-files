@@ -24,15 +24,25 @@ function plnrr() {
     app/console doctrine:fixtures:load -n
 }
 
+function mkpostgres() {
+    createuser --pwprompt $1
+    createdb -O$1 -Eutf8 $1
+}
+
 #generate path
+export PATH=~/bin/:$PATH
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/mysql/bin
 export PATH=/usr/local/php5/bin:$PATH
 
 export PATH=~/.composer/vendor/bin/:$PATH
 export PATH=~/wijs_scripts/:$PATH
-export PATH=~/bin/:$PATH
 export PATH=/opt/local/bin/:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
+export PATH=/usr/local/php5/bin:$PATH
+
 
 # fix for mysql and python
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
