@@ -59,6 +59,8 @@ fi
 source ~/.symfony2_autocomplete.bash
 
 
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+
 source /usr/local/bin/virtualenvwrapper.sh
 
 alias g='git'
@@ -81,10 +83,14 @@ parse_git_branch() {
 export PS1="\u \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 
-#NVM
-export NVM_DIR="~/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" 
+export GOPATH=~/Go
+export PATH=$PATH:$GOPATH/bin
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+#NVM
+#export NVM_DIR="~/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" 
+
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 
