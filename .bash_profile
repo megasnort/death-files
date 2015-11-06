@@ -70,7 +70,7 @@ alias sakg='sudo apachectl -k graceful'
 alias sar='sudo apachectl restart'
 alias sonar-qube='/usr/local/sonarqube/bin/macosx-universal-64/sonar.sh'
 alias cc='./tools/remove_cache' #FORK
-
+alias yolo='cap production deploy'
 
 # PROMPT
 #show the current branch in the prompt
