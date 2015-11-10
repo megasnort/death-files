@@ -29,23 +29,29 @@ function mkpostgres() {
     createdb -O$1 -Eutf8 $1
 }
 
+export GOPATH=~/Go
+
+
 #generate path
-export PATH=~/bin/:$PATH
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/mysql/bin
+export PATH=~/bin:$PATH
+export PATH=~/wijs_scripts:$PATH
+export PATH=~/.composer/vendor/bin:$PATH
+export PATH=/bin:$PATH
+export PATH=/sbin:$PATH
+export PATH=/usr/bin:$PATH
+export PATH=/usr/sbin:$PATH
+export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/php5/bin:$PATH
-
-export PATH=~/.composer/vendor/bin/:$PATH
-export PATH=~/wijs_scripts/:$PATH
-export PATH=/opt/local/bin/:$PATH
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
-
-export PATH=/usr/local/php5/bin:$PATH
+export PATH=/usr/local/mysql/bin:$PATH
+export PATH=/opt/local/bin:$PATH
+export PATH=/opt/local/sbin:$PATH
+export PATH=/usr/local/opt/go/libexec/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
 
 
 # fix for mysql and python
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
+
 
 #python env
 export WORKON_HOME=~/Envs
@@ -59,7 +65,7 @@ fi
 source ~/.symfony2_autocomplete.bash
 
 
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 
 source /usr/local/bin/virtualenvwrapper.sh
 
@@ -83,8 +89,6 @@ parse_git_branch() {
 export PS1="\u \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 
-export GOPATH=~/Go
-export PATH=$PATH:$GOPATH/bin
 
 
 #NVM
