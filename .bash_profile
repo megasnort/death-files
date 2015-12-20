@@ -3,6 +3,11 @@ function itns() {
     lsof +D ~/Music/iTunes/iTunes\ Music/ -i | grep iTunes
 }
 
+function plnr() {
+	cd ~/Sites/plnr-django/plnr/
+	workon plnr
+}
+
 #reinit a symfony project
 function sfreset() {
     app/console doctrine:schema:update --force
@@ -31,7 +36,7 @@ function mkpostgres() {
 
 #generate path
 export PATH=~/bin/:$PATH
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/mysql/bin
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/mysql/bin:$PATH
 export PATH=/usr/local/php5/bin:$PATH
 
 export PATH=~/.composer/vendor/bin/:$PATH
@@ -94,3 +99,13 @@ export PATH=$PATH:$GOPATH/bin
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH
