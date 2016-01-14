@@ -8,14 +8,19 @@ function plnr() {
 	workon plnr
 }
 
-#reinit a symfony project
+function lijsttrekkers() {
+    cd ~/Sites/lijsttrekkers_django/lijsttrekkers/
+    workon lijsttrekkers
+}
+
+# Reinit a symfony project
 function sfreset() {
     app/console doctrine:schema:update --force
     app/console doctrine:fixtures:load -n
     app/console cache:clear
 }
 
-#show complete path in a readable way
+# Show complete path in a readable way
 function path(){
     old=$IFS
     IFS=:
@@ -23,63 +28,41 @@ function path(){
     IFS=$old
 }
 
-function plnrr() {
-    app/console doctrine:schema:update --force
-    app/console doctrine:generate:entities MegasnortPlnrBundle
-    app/console doctrine:fixtures:load -n
-}
-
+# POSTGRES
 function mkpostgres() {
     createuser --pwprompt $1
     createdb -O$1 -Eutf8 $1
 }
 
-#generate path
-export PATH=~/bin/:$PATH
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/mysql/bin:$PATH
-export PATH=/usr/local/php5/bin:$PATH
+# GO
+export GOPATH=~/Go
 
-export PATH=~/.composer/vendor/bin/:$PATH
-export PATH=~/wijs_scripts/:$PATH
-export PATH=/opt/local/bin/:$PATH
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
-
-export PATH=/usr/local/php5/bin:$PATH
-
-
-# fix for mysql and python
+# PYTHON
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
-
-#python env
 export WORKON_HOME=~/Envs
-
-
-# use git autocompletion
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
-
-source ~/.symfony2_autocomplete.bash
-
-
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 
 source /usr/local/bin/virtualenvwrapper.sh
 
-alias g='git'
-alias ac='app/console'
 alias pm='python manage.py '
-alias sonar-runner='/usr/local/sonar-runner/bin/sonar-runner'
 
+# PHP
+source ~/.symfony2_autocomplete.bash
+alias ac='app/console'
+alias cc='./tools/remove_cache' #FORK CMS
+
+# APACHE
 alias sakg='sudo apachectl -k graceful'
 alias sar='sudo apachectl restart'
-alias sonar-qube='/usr/local/sonarqube/bin/macosx-universal-64/sonar.sh'
-alias cc='./tools/remove_cache' #FORK
 
 
-# PROMPT
+#GIT
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
+alias g='git'
+
 #show the current branch in the prompt
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -88,24 +71,21 @@ parse_git_branch() {
 export PS1="\u \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 
-export GOPATH=~/Go
-export PATH=$PATH:$GOPATH/bin
+# PATH
+export PATH=~/bin/:$PATH
+export PATH=~/.composer/vendor/bin:$PATH
+export PATH=~/wijs_scripts:$PATH
+export PATH=/sbin:$PATH
+export PATH=/opt/local/bin:$PATH
+export PATH=/opt/local/sbin:$PATH
+export PATH=/usr/bin:/bin:$PATH
+export PATH=/usr/sbin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/mysql/bin:$PATH
+export PATH=/usr/local/php5/bin:$PATH
+export PATH=/usr/local/opt/go/libexec/bin:$PATH
+export PATH=/usr/local/php5/bin:$PATH
+export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
 
 
-#NVM
-#export NVM_DIR="~/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" 
-
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-
-
-# Setting PATH for Python 2.7
-# The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-export PATH
-
-# Setting PATH for Python 2.7
-# The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-export PATH
