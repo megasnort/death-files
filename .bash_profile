@@ -36,6 +36,7 @@ export GOPATH=~/Go
 export PATH=~/bin:$PATH
 export PATH=~/wijs_scripts:$PATH
 export PATH=~/.composer/vendor/bin:$PATH
+export PATH=~/.gem/ruby/2.2.0/bin:$PATH
 export PATH=/bin:$PATH
 export PATH=/sbin:$PATH
 export PATH=/usr/bin:$PATH
@@ -47,6 +48,7 @@ export PATH=/opt/local/bin:$PATH
 export PATH=/opt/local/sbin:$PATH
 export PATH=/usr/local/opt/go/libexec/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
+export PATH=/usr/local/opt/ruby/bin/:$PATH
 
 
 # fix for mysql and python
@@ -65,7 +67,7 @@ fi
 source ~/.symfony2_autocomplete.bash
 
 
-#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 
 source /usr/local/bin/virtualenvwrapper.sh
 
@@ -79,6 +81,8 @@ alias sar='sudo apachectl restart'
 alias sonar-qube='/usr/local/sonarqube/bin/macosx-universal-64/sonar.sh'
 alias cc='./tools/remove_cache' #FORK
 alias yolo='cap production deploy'
+alias start_postgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+
 
 # PROMPT
 #show the current branch in the prompt
@@ -98,3 +102,4 @@ export PS1="\u \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
