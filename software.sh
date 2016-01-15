@@ -3,8 +3,20 @@
 # INSTALL ALL THE THINGS
 # to update, add "update"
 
-brew upgrade
+#@todo: 1. check if package managers exists, if not install
+#@todo: 2. frontend stuff, gulp, bundler, npm, gem, ...
+#@todo: 3. app store update
+#@todo: 4. Auto install Apache, MySQL and PHP
 
+
+# Update all package managers
+brew upgrade
+composer selfupdate
+pip install --upgrade pip
+
+
+# Check if we just need to install new software present in this file
+# or we should update existing software
 if [ "$1" == "update" ]; then
   pipupgrade="--upgrade"
   brewupgrade="--force"
@@ -14,11 +26,11 @@ else
   brewupgrade=""
 fi
 
+
 # PIP
-pip install $pipupgrade BeautifulSoup
-pip install $pipupgrade Unidecode
 pip install $pipupgrade virtualenv
 pip install $pipupgrade virtualenvwrapper
+
 
 # BREW
 brew install git
@@ -97,10 +109,10 @@ brew cask install transmission $brewupgrade
 # clean the cache to save disk space
 brew cask cleanup
 
-# NOT AUTO INSTALLABLE
+# TO BE INSTALLED MANUALLY
 # armagetron advanced
 # sony bridge for mac
-# pycharm community
+# pycharm community edition
 
 # APP STORE
 # radio centraal
