@@ -2,6 +2,30 @@
 export GOPATH=~/Go
 
 
+# == PATH ===============================================================
+function path(){
+    old=$IFS
+    IFS=:
+    printf "%s\n" $PATH
+    IFS=$old
+}
+
+export PATH=~/bin/:$PATH
+export PATH=~/.composer/vendor/bin:$PATH
+export PATH=~/wijs_scripts:$PATH
+export PATH=/sbin:$PATH
+export PATH=/opt/local/bin:$PATH
+export PATH=/opt/local/sbin:$PATH
+export PATH=/usr/bin:/bin:$PATH
+export PATH=/usr/sbin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/mysql/bin:$PATH
+export PATH=/usr/local/opt/go/libexec/bin:$PATH
+export PATH=/usr/local/php5/bin:$PATH
+export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
+
+
 # == PYTHON =============================================================
 # boot a django project
 function dj() {
@@ -15,6 +39,7 @@ function dj() {
 
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 export WORKON_HOME=~/Envs
+export PROJECT_HOME=~/Python
 
 source /usr/local/bin/virtualenvwrapper.sh
 
@@ -70,29 +95,3 @@ export PS1="\u \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 function itns() {
     lsof +D ~/Music/iTunes/iTunes\ Music/ -i | grep iTunes
 }
-
-
-# == PATH ===============================================================
-function path(){
-    old=$IFS
-    IFS=:
-    printf "%s\n" $PATH
-    IFS=$old
-}
-
-export PATH=~/bin/:$PATH
-export PATH=~/.composer/vendor/bin:$PATH
-export PATH=~/wijs_scripts:$PATH
-export PATH=/sbin:$PATH
-export PATH=/opt/local/bin:$PATH
-export PATH=/opt/local/sbin:$PATH
-export PATH=/usr/bin:/bin:$PATH
-export PATH=/usr/sbin:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/mysql/bin:$PATH
-export PATH=/usr/local/opt/go/libexec/bin:$PATH
-export PATH=/usr/local/php5/bin:$PATH
-export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
-export PATH=$GOPATH/bin:$PATH
-
-
