@@ -30,7 +30,6 @@ brew install composer
 brew install postgresql
 brew install php-code-sniffer
 
-brew cask install opera $brewupgrade
 
 # CASK
 # clean the cache so we will not install old versions
@@ -41,7 +40,7 @@ brew cask install java $brewupgrade
 brew cask install disk-inventory-x $brewupgrade
 
 # browsers
-
+brew cask install opera $brewupgrade
 brew cask install firefox $brewupgrade
 brew cask install google-chrome $brewupgrade
 
