@@ -1,64 +1,109 @@
-# install all the things
+#!/bin/bash
+
+# INSTALL ALL THE THINGS
+# to update, add "update"
+
+brew upgrade
+
+if [ "$1" == "update" ]; then
+  pipupgrade="--upgrade"
+  brewupgrade="--force"
+  brew update
+else
+  pipupgrade=""
+  brewupgrade=""
+fi
+
+# PIP
+pip install $pipupgrade BeautifulSoup
+pip install $pipupgrade Unidecode
+pip install $pipupgrade virtualenv
+pip install $pipupgrade virtualenvwrapper
 
 # BREW
+brew install git
+brew install tmux
+brew install php56
 brew install figlet
+brew install sqlite
+brew install composer
+brew install postgresql
+brew install php-code-sniffer
+
+brew cask install opera $brewupgrade
 
 # CASK
+# clean the cache so we will not install old versions
+brew cask cleanup
+
 # general
-brew cask install java
-brew cask install disk-inventory-x
+brew cask install java $brewupgrade
+brew cask install disk-inventory-x $brewupgrade
 
 # browsers
-brew cask install google-chrome
-brew cask install firefox
-brew cask install opera
+
+brew cask install firefox $brewupgrade
+brew cask install google-chrome $brewupgrade
 
 # text editors
-brew cask install atom
-brew cask install coda
-brew cask install sublime-text
-brew cask install phpstorm
+brew cask install atom $brewupgrade
+brew cask install coda $brewupgrade
+brew cask install phpstorm $brewupgrade
+brew cask install sublime-text $brewupgrade
 
 # database
-brew cask install sequel-pro
-brew cask install psequel
-brew cask install mysqlworkbench
+brew cask install psequel $brewupgrade
+brew cask install sequel-pro $brewupgrade
+brew cask install mysqlworkbench $brewupgrade
 
 # images
-brew cask install seashore
+brew cask install seashore $brewupgrade
 
 # dtp
-brew cask install inkscape
-brew cask install scribus
+brew cask install scribus $brewupgrade
+brew cask install inkscape $brewupgrade
 
 # text
-brew cask install libreoffice
-brew cask install mou
+brew cask install mou $brewupgrade
+brew cask install libreoffice $brewupgrade
 
 # games
-brew cask install nestopia
+brew cask install nestopia $brewupgrade
 
 # video
-brew cask install vlc
-brew cask install aegisub
-brew cask install mplayerx
-brew cask install handbrake
+brew cask install vlc $brewupgrade
+brew cask install aegisub $brewupgrade
+brew cask install mplayerx $brewupgrade
+brew cask install handbrake $brewupgrade
+
+# communications
+brew cask install skype $brewupgrade
+brew cask install hipchat $brewupgrade
+brew cask install colloquy $brewupgrade
 
 # misc
-brew cask install alarm-clock
-brew cask install alfred
-brew cask install disk-inventory-x
-brew cask install iterm2
-brew cask install hipchat
-brew cask install github-desktop
+brew cask install iterm2 $brewupgrade
+brew cask install alfred $brewupgrade
+brew cask install alarm-clock $brewupgrade
+brew cask install google-earth $brewupgrade
+brew cask install github-desktop $brewupgrade
+brew cask install disk-inventory-x $brewupgrade
 
-# ftp
-brew cask install filezilla
-brew cask install transmission
-brew cask install dropbox
-brew cask install google-drive
+# files
+brew cask install dropbox $brewupgrade
+brew cask install filezilla $brewupgrade
+brew cask install google-drive $brewupgrade
+brew cask install transmission $brewupgrade
 
+# clean the cache to save disk space
+brew cask cleanup
 
-# not installable
+# NOT AUTO INSTALLABLE
 # armagetron advanced
 # sony bridge for mac
+# pycharm community
+
+# APP STORE
+# radio centraal
+# last pass
+# xml nanny
