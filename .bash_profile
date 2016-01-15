@@ -15,7 +15,6 @@ function dj() {
 
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 export WORKON_HOME=~/Envs
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 
 source /usr/local/bin/virtualenvwrapper.sh
 
