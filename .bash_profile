@@ -27,13 +27,25 @@ export PATH=$GOPATH/bin:$PATH
 
 
 # == PYTHON =============================================================
-# boot a django project
+# boot a django project in a tmux session with the server on top
 function dj() {
-    cd ~/Python/$1/$1/
-    workon $1
+    if [ -z "$1" ]; then
+        echo "Provide the name of the existing django project"
+    elif [ ! -f ~/Python/$1/$1/manage.py ]; then
+        echo "$1 is not an existing django project"
+    else
+        tmux new-session -d
+        tmux split-window -d -t 0 -v
 
-    if [ -n "$2" ]; then
-        python manage.py runserver
+        tmux send-keys -t 0 "cd $PROJECT_HOME/$1/$1" enter C-l
+        tmux send-keys -t 0 "workon $1" enter C-l
+        tmux send-keys -t 0 "python manage.py runserver" enter
+
+        tmux send-keys -t 1 "cd $PROJECT_HOME/$1/$1" enter C-l
+        tmux send-keys -t 1 "workon $1" enter C-l
+        tmux select-pane -t 1
+
+        tmux attach
     fi
 }
 
@@ -95,3 +107,8 @@ export PS1="\u \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 function itns() {
     lsof +D ~/Music/iTunes/iTunes\ Music/ -i | grep iTunes
 }
+
+
+# == TMUX ===============================================================
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
