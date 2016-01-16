@@ -10,9 +10,16 @@
 
 
 # Update all package managers
+
+# setup
+# xcode-select --install
+# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# sudo chown <username> /usr/local/etc
+
 brew upgrade
 composer selfupdate
 pip install --upgrade pip
+brew install caskroom/cask/brew-cask
 
 
 # Check if we just need to install new software present in this file
@@ -26,22 +33,25 @@ else
   brewupgrade=""
 fi
 
-
-# PIP
-pip install $pipupgrade virtualenv
-pip install $pipupgrade virtualenvwrapper
-
-
 # BREW
+brew install go
 brew install git
+brew install bash
+brew install axel
+brew install curl
+brew install nmap 
+brew install wget
 brew install tmux
 brew install php56
 brew install figlet
 brew install sqlite
+brew install nodejs
+brew install python
+brew install python3
 brew install composer
 brew install postgresql
 brew install php-code-sniffer
-
+brew install imagemagick --with-librsvg
 
 # CASK
 # clean the cache so we will not install old versions
@@ -91,6 +101,7 @@ brew cask install handbrake $brewupgrade
 brew cask install skype $brewupgrade
 brew cask install hipchat $brewupgrade
 brew cask install colloquy $brewupgrade
+brew cask install slack $brewupgrade
 
 # misc
 brew cask install iterm2 $brewupgrade
@@ -108,6 +119,13 @@ brew cask install transmission $brewupgrade
 
 # clean the cache to save disk space
 brew cask cleanup
+
+
+# PIP
+pip2 install $pipupgrade virtualenv
+pip2 install $pipupgrade virtualenvwrapper
+pip3 install $pipupgrade virtualenv
+pip3 install $pipupgrade virtualenvwrapper
 
 # TO BE INSTALLED MANUALLY
 # armagetron advanced
