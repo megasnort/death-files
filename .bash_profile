@@ -10,7 +10,7 @@ function path(){
     IFS=$old
 }
 
-export PATH=~/bin/:$PATH
+export PATH=~/bin:$PATH
 export PATH=~/.composer/vendor/bin:$PATH
 export PATH=~/wijs_scripts:$PATH
 export PATH=/sbin:$PATH
@@ -19,6 +19,7 @@ export PATH=/opt/local/sbin:$PATH
 export PATH=/usr/bin:/bin:$PATH
 export PATH=/usr/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
 export PATH=/usr/local/opt/go/libexec/bin:$PATH
 export PATH=/usr/local/php5/bin:$PATH
