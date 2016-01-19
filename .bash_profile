@@ -35,18 +35,15 @@ function dj() {
     elif [ ! -f ~/Python/$1/$1/manage.py ]; then
         echo "$1 is not an existing django project"
     else
-        tmux new-session -d
-        tmux split-window -d -t 0 -v
-
-        tmux send-keys -t 0 "cd $PROJECT_HOME/$1/$1" enter C-l
-        tmux send-keys -t 0 "workon $1" enter C-l
-        tmux send-keys -t 0 "python manage.py runserver" enter
-
-        tmux send-keys -t 1 "cd $PROJECT_HOME/$1/$1" enter C-l
-        tmux send-keys -t 1 "workon $1" enter C-l
-        tmux select-pane -t 1
-
-        tmux attach
+        osascript <<-EOF
+    tell application "iTerm"
+        tell (current terminal)
+            tell the current session to write text "cd ~/Python/$1/$1 && workon $1 && python manage.py runserver"
+            tell application "System Events" to keystroke "d" using command down
+            tell the current session to write text "cd ~/Python/$1/$1 && workon $1"
+        end tell
+    end tell  
+EOF
     fi
 }
 
@@ -108,8 +105,3 @@ export PS1="\u \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 function itns() {
     lsof +D ~/Music/iTunes/iTunes\ Music/ -i | grep iTunes
 }
-
-
-# == TMUX ===============================================================
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
