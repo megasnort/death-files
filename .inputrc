@@ -1,0 +1,13 @@
+"\e[B": history-search-forward
+"\e[A": history-search-backward
+set history-preserve-point on
+set completion-ignore-case On
+set mark-symlinked-directories on
+set page-completions off
+set show-all-if-ambiguous on
+set visible-stats on
+set skip-completed-text on
+set input-meta on
+set output-meta on
+set convert-meta off
+
