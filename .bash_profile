@@ -28,7 +28,7 @@ export PATH=$GOPATH/bin:$PATH
 
 
 # == PYTHON =============================================================
-# boot a django project in a tmux session with the server on top
+# boot a django project in two iTerm panes
 function dj() {
     if [ -z "$1" ]; then
         echo "Provide the name of the existing django project"
