@@ -84,7 +84,7 @@ function mkpostgres() {
     createdb -O$1 -Eutf8 $1
 }
 
-alias start_postgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias start_postgres='pg_ctl -D /usr/local/var/postgres -l logfile start'
 
 
 # == GIT ================================================================
