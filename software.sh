@@ -48,6 +48,8 @@ brew install sqlite
 brew install nodejs
 brew install python
 brew install python3
+brew install macdown
+brew install gettext
 brew install composer
 brew install postgresql
 brew install php-code-sniffer
