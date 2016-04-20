@@ -55,6 +55,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 alias pm='python manage.py '
 
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # == PHP ================================================================
 function sfreset() {
