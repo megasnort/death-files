@@ -34,6 +34,7 @@ if [ "$1" == "update" ]; then
   pipupgrade="--upgrade"
   brewupgrade="--force"
   brew update
+  pip install --upgrade pip setuptools
 else
   pipupgrade=""
   brewupgrade=""
