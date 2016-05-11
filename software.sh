@@ -3,7 +3,13 @@
 # INSTALL ALL THE THINGS
 # to update, add "update"
 
-#@todo: 1. check if package managers exists, if not install
+#@todo: 1. check if package managers exists
+	# brew
+	# pip
+	# npm
+
+	# gem
+	# if not install
 #@todo: 2. frontend stuff, gulp, bundler, npm, gem, ...
 #@todo: 3. app store update
 #@todo: 4. Auto install Apache, MySQL and PHP
@@ -39,7 +45,9 @@ brew install git
 brew install bash
 brew install axel
 brew install curl
-brew install nmap 
+brew install nmap
+brew install node
+brew install ruby
 brew install wget
 brew install tmux
 brew install php56
@@ -81,6 +89,7 @@ brew cask install mysqlworkbench $brewupgrade
 
 # images
 brew cask install seashore $brewupgrade
+brew cask install gimp $brewupgrade
 
 # dtp
 brew cask install scribus $brewupgrade
@@ -101,7 +110,6 @@ brew cask install handbrake $brewupgrade
 
 # communications
 brew cask install skype $brewupgrade
-brew cask install hipchat $brewupgrade
 brew cask install colloquy $brewupgrade
 brew cask install slack $brewupgrade
 
@@ -129,10 +137,16 @@ pip2 install $pipupgrade virtualenvwrapper
 pip3 install $pipupgrade virtualenv
 pip3 install $pipupgrade virtualenvwrapper
 
+
+#npm
+npm install -g gulp-cli
+npm install -g bower
+
 # TO BE INSTALLED MANUALLY
 # armagetron advanced
 # sony bridge for mac
 # pycharm community edition
+# cisco anyconnect secure mobility client
 
 # APP STORE
 # radio centraal

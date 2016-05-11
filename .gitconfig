@@ -3,7 +3,7 @@
 	excludesfile = ~/.gitignore
 [user]
 	name = Stef Bastiaansen
-	email = stef@megasnort.com
+	email = stef.bastiaansen@ugent.be
 
 [alias]
 	a = add
