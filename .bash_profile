@@ -38,13 +38,18 @@ function dj() {
         osascript <<-EOF
     tell application "iTerm"
         tell (current terminal)
-            tell the current session to write text "cd ~/Python/$1/$1 && workon $1 && python manage.py runserver"
+            tell the current session to write text "cd ~/Python/$1/$1 && workon $1 && pycharm && python manage.py runserver"
             tell application "System Events" to keystroke "d" using command down
             tell the current session to write text "cd ~/Python/$1/$1 && workon $1"
         end tell
     end tell  
 EOF
     fi
+}
+
+
+function pycharm() {
+    /Applications/PyCharm\ CE.app/Contents/MacOS/pycharm ${PWD} > /dev/null 2>&1 & disown
 }
 
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
@@ -54,6 +59,8 @@ export PROJECT_HOME=~/Python
 source /usr/local/bin/virtualenvwrapper.sh
 
 alias pm='python manage.py '
+
+
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
