@@ -22,6 +22,4 @@ EOF
     fi
 }
 
-source /usr/local/bin/virtualenvwrapper.sh
-
 alias pm='python manage.py '
