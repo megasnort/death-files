@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
 
-alias sakg='sudo apachectl -k graceful'
-alias sar='sudo apachectl restart'
+
+if hash apachectl 2>/dev/null; then
+    alias sarl='sudo apachectl -k restart'
+    alias sars='sudo apachectl -k restart'
+else
+    alias sarl='sudo service apache2 reload'
+    alias sars='sudo service apache2 restart'
+fi

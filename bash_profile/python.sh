@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
+# Directory for the virtualenvs of virtualenvwrapper
 export WORKON_HOME=~/Envs
 
-
-
+# osx: start two terminal windows,
+# one with the running django dev-server
+# one with the project-root
+# both in the correct virtual env
 function dj() {
     if [ -z "$1" ]; then
         echo "Provide the name of the existing django project"
@@ -22,4 +25,8 @@ EOF
     fi
 }
 
+# alias for working with django
 alias pm='python manage.py '
+
+# add the currect python version, and pip etc. to the path
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
