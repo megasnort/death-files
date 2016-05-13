@@ -1,31 +1,28 @@
 #!/bin/bash
 
 # INSTALL ALL THE THINGS
-# to update, add "update"
+# to update, add "update" after ./software.sh
 
-#@todo: 1. check if package managers exists
-	# brew
-	# pip
-	# npm
-
-	# gem
-	# if not install
-#@todo: 2. frontend stuff, gulp, bundler, npm, gem, ...
-#@todo: 3. app store update
-#@todo: 4. Auto install Apache, MySQL and PHP
+# TO BE INSTALLED MANUALLY FIRST
+# armagetron advanced
+# xperia software
+# pycharm community edition
+# cisco anyconnect secure mobility client
+# brew
 
 
-# Update all package managers
-
-# setup
+# APP STORE
+# radio centraal
+# xml nanny
+# xcode
 # xcode-select --install
-# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-# sudo chown <username> /usr/local/etc
+
+
 
 brew upgrade
 composer selfupdate
 pip install --upgrade pip
-brew install caskroom/cask/brew-cask
+
 
 
 # Check if we just need to install new software present in this file
@@ -55,8 +52,6 @@ brew install php56
 brew install figlet
 brew install sqlite
 brew install nodejs
-brew install python
-brew install python3
 brew install macdown
 brew install gettext
 brew install composer
@@ -137,19 +132,11 @@ pip2 install $pipupgrade virtualenv
 pip2 install $pipupgrade virtualenvwrapper
 pip3 install $pipupgrade virtualenv
 pip3 install $pipupgrade virtualenvwrapper
+pip install pyenv
 
 
 #npm
 npm install -g gulp-cli
 npm install -g bower
 
-# TO BE INSTALLED MANUALLY
-# armagetron advanced
-# sony bridge for mac
-# pycharm community edition
-# cisco anyconnect secure mobility client
 
-# APP STORE
-# radio centraal
-# last pass
-# xml nanny
