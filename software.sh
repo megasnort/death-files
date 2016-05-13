@@ -127,12 +127,12 @@ brew cask install transmission $brewupgrade
 brew cask cleanup
 
 
-# PIP
-pip2 install $pipupgrade virtualenv
-pip2 install $pipupgrade virtualenvwrapper
-pip3 install $pipupgrade virtualenv
-pip3 install $pipupgrade virtualenvwrapper
-pip install pyenv
+# pip
+pip install $pipupgrade virtualenv
+pip install $pipupgrade virtualenvwrapper
+pip install $pipupgrade pyenv
+pip install $pipupgrade pylint
+pip install $pipupgrade pylint-django
 
 
 #npm
