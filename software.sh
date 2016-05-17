@@ -142,4 +142,5 @@ npm install -g bower
 
 #gem
 gem install jekyll
+gem install bundler
 
