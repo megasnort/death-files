@@ -30,3 +30,12 @@ alias pm='python manage.py '
 
 # add the currect python version, and pip etc. to the path
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+
+function frameworkpython {
+    if [[ ! -z "$VIRTUAL_ENV" ]]; then
+        PYTHONHOME=$VIRTUAL_ENV ~/.pyenv/shims/python "$@"
+    else
+        ~/.pyenv/shims/python "$@"
+    fi
+}
