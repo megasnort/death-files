@@ -56,6 +56,7 @@ brew install macdown
 brew install gettext
 brew install composer
 brew install postgresql
+brew install ghostscript
 brew install php-code-sniffer
 brew install imagemagick --with-librsvg
 
