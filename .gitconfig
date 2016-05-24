@@ -1,6 +1,6 @@
 [core]
-	#global ignoring
 	excludesfile = ~/.gitignore
+
 [user]
 	name = Stef Bastiaansen
 	email = stef.bastiaansen@ugent.be
@@ -29,8 +29,3 @@
 [merge]
 	log = true
 
-[filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
-[push]
-	default = simple
