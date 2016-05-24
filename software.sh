@@ -39,6 +39,7 @@ fi
 
 # BREW
 brew install go
+brew install gcc
 brew install git
 brew install svn
 brew install bash
