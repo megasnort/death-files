@@ -40,6 +40,7 @@ fi
 # BREW
 brew install go
 brew install git
+brew install svn
 brew install bash
 brew install axel
 brew install curl
