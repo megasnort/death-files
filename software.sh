@@ -57,6 +57,7 @@ brew install nodejs
 brew install macdown
 brew install gettext
 brew install composer
+brew install memcachd
 brew install postgresql
 brew install ghostscript
 brew install php-code-sniffer
