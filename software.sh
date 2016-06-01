@@ -4,11 +4,8 @@
 # to update, add "update" after ./software.sh
 
 # TO BE INSTALLED MANUALLY FIRST
-# armagetron advanced
-# xperia software
-# pycharm community edition
-# cisco anyconnect secure mobility client
 # brew
+# pip
 
 
 # APP STORE
@@ -57,7 +54,6 @@ brew install nodejs
 brew install macdown
 brew install gettext
 brew install composer
-brew install docker
 brew install memcachd
 brew install postgresql
 brew install ghostscript
@@ -128,6 +124,9 @@ brew cask install filezilla $brewupgrade
 brew cask install google-drive $brewupgrade
 brew cask install transmission $brewupgrade
 
+# virtual box
+brew cask install virtualbox
+
 # clean the cache to save disk space
 brew cask cleanup
 
@@ -135,6 +134,8 @@ brew cask cleanup
 # pip
 pip install $pipupgrade virtualenv
 pip install $pipupgrade virtualenvwrapper
+pip3 install $pipupgrade virtualenv
+pip3 install $pipupgrade virtualenvwrapper
 pip install $pipupgrade pyenv
 pip install $pipupgrade pylint
 pip install $pipupgrade pylint-django
@@ -148,4 +149,12 @@ npm install -g bower
 #gem
 gem install jekyll
 gem install bundler
+
+# TO BE INSTALLED MANUALLY LAST
+# armagetron advanced
+# xperia software
+# pycharm community edition
+# cisco anyconnect secure mobility client
+# docker-tools
+
 
