@@ -57,6 +57,7 @@ brew install nodejs
 brew install macdown
 brew install gettext
 brew install composer
+brew install docker
 brew install memcachd
 brew install postgresql
 brew install ghostscript
