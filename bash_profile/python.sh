@@ -3,6 +3,14 @@
 # Directory for the virtualenvs of virtualenvwrapper
 export WORKON_HOME=~/Envs
 
+# activate virtualenv on the server
+function ve() {
+    . /webapps/$1/virtualenv/bin/activate
+    cd /webapps/$1/
+    # should the subdirectory not have the same name, we're in the root dir anyway
+    cd $1
+}
+
 # osx: start two terminal windows,
 # one with the running django dev-server
 # one with the project-root
