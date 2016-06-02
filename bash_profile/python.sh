@@ -28,6 +28,9 @@ EOF
 # alias for working with django
 alias pm='python manage.py '
 
+# alias for booting ugent web app manager
+alias webapp='workon webapp-management-on-thoth && cd ~/Python/webapp-management-on-thoth/ && fab -l'
+
 # add the currect python version, and pip etc. to the path
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
