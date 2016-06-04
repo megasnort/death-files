@@ -78,6 +78,7 @@ brew cask install atom $brewupgrade
 brew cask install coda $brewupgrade
 brew cask install phpstorm $brewupgrade
 brew cask install sublime-text $brewupgrade
+brew cask install pycharm $brewupgrade
 
 # database
 brew cask install psequel $brewupgrade
