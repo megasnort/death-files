@@ -156,6 +156,7 @@ gem install bundler
 # pycharm community edition
 # cisco anyconnect secure mobility client
 # docker-tools
+# R https://cran.r-project.org/bin/macosx/
 
 # https://www.vagrantup.com/downloads.html
 
