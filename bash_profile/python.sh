@@ -3,6 +3,9 @@
 # Directory for the virtualenvs of virtualenvwrapper
 export WORKON_HOME=~/Envs
 
+
+
+
 # activate the correct virtualenv on the server, or locally, and cd into the folder
 function ve() {
     if [ -d ~/Python/$1/ ]; then
@@ -16,6 +19,29 @@ function ve() {
         else
             cd /webapps/$1
         fi
+    fi
+}
+
+# Only on osx: start two terminal windows,
+# one with the running flask dev-server
+# one with the project-root
+# both in the correct virtual env
+function fl() {
+    if [ -z "$1" ]; then
+        echo "Provide the name of the existing flask project"
+    else
+        osascript <<-EOF
+    tell application "iTerm2"
+        tell current session of current window
+            write text "workon $1 && cd ~/Python/$1"
+            set newSession to (split vertically with default profile)
+        end tell
+
+        tell newSession
+            write text "workon $1 && cd ~/Python/$1 && export FLASK_APP=$1.py && export FLASK_DEBUG=1 && flask run"
+        end tell
+    end tell
+EOF
     fi
 }
 
@@ -35,7 +61,7 @@ function dj() {
         end tell
 
         tell newSession
-            write text "workon $1 && cd ~/Python/$1 && charm . && cd $1 && python manage.py runserver"
+            write text "workon $1 && cd ~/Python/$1 && cd $1 && python manage.py runserver"
         end tell
     end tell
 EOF
