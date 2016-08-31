@@ -78,6 +78,7 @@ brew cask install atom $brewupgrade
 brew cask install coda $brewupgrade
 brew cask install phpstorm $brewupgrade
 brew cask install sublime-text $brewupgrade
+brew cask install pycharm $brewupgrade
 
 # database
 brew cask install psequel $brewupgrade
@@ -156,6 +157,7 @@ gem install bundler
 # pycharm community edition
 # cisco anyconnect secure mobility client
 # docker-tools
+# R https://cran.r-project.org/bin/macosx/
 
 # https://www.vagrantup.com/downloads.html
 
