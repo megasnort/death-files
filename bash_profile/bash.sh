@@ -20,7 +20,7 @@ parse_git_branch() {
 
 # overwrite ls
 ls() {
-	/bin/ls -alh
+	/bin/ls -alh $1
 }
 
 # prompt
