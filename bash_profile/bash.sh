@@ -20,10 +20,8 @@ function parse_git_branch() {
 
 # overwrite ls
 function ls() {
-	/bin/ls -alh
+	/bin/ls -alh $1
 }
 
 # prompt
 export PS1="\[\033[33m\]\u\[\033[35m\]@\h\[\033[00m\] \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\]$ "
-
-
