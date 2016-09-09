@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # show path in list
-path(){
+function path(){
     old=$IFS
     IFS=:
     printf "%s\n" $PATH
@@ -9,17 +9,17 @@ path(){
 }
 
 # show who is connected to my iTunes
-itns() {
+function itns() {
     lsof +D ~/Music/iTunes/iTunes\ Music/ -i | grep iTunes
 }
 
 # function to show the current branch in the prompt
-parse_git_branch() {
+function parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
 # overwrite ls
-ls() {
+function ls() {
 	/bin/ls -alh
 }
 
