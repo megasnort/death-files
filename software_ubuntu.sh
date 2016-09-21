@@ -5,6 +5,7 @@ sudo apt-get update
 sudo apt-get --assume-yes install git
 sudo apt-get --assume-yes install htop
 sudo apt-get --assume-yes install docker-engine
+sudo apt-get --assume-yes install unzip
 
 # python
 sudo apt-get --assume-yes install python-pip
