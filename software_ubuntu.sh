@@ -39,5 +39,3 @@ echo "deb https://packages.elastic.co/elasticsearch/2.x/debian stable main" | su
 sudo apt-get update
 sudo apt-get install elasticsearch
 sudo update-rc.d elasticsearch defaults 95 10
-
-echo "Do not forget to add the virtualenvwrapper script to .bash_profile"
