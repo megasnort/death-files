@@ -68,6 +68,8 @@ EOF
     fi
 }
 
+# alias for PyCharm
+alias charm='open -a /Applications/PyCharm.app'
 
 # alias for working with django
 alias pm='python manage.py '
