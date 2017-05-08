@@ -20,7 +20,7 @@ function parse_git_branch() {
 
 # overwrite ls
 function ls() {
-	/bin/ls -alh $1
+	/bin/ls -alh "$@"
 }
 
 # prompt

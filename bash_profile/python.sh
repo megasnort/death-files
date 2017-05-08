@@ -68,6 +68,7 @@ EOF
     fi
 }
 
+
 # alias for PyCharm
 alias charm='open -a /Applications/PyCharm.app'
 
