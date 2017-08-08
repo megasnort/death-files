@@ -56,7 +56,7 @@ function dj() {
         osascript <<-EOF
     tell application "iTerm2"
         tell current session of current window
-            write text "workon $1 && cd ~/Python/$1 && cd $1"
+            write text "workon $1 && cd ~/Python/$1 && charm . && cd $1"
             set newSession to (split vertically with default profile)
         end tell
 
