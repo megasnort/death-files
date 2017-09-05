@@ -24,4 +24,4 @@ function ls() {
 }
 
 # prompt
-export PS1="\[\033[33m\]\u\[\033[35m\]@\h\[\033[00m\] \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\]$ "
+export PS1="\[\033[33m\]\u\[\033[31m\]@\h\[\033[00m\] \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\]$ "
