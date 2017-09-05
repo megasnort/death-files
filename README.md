@@ -1,8 +1,8 @@
-#Death files
+# Death files
 For feeling at home everywhere.
 Probably not of use to anyone except for me, syncing my many computers.
 
-##Usage
+## Usage
 
 1. Clone this repository into a folder somewhere on your computer, f.e. `~/death-files`
 2. Run the script `./install.sh`. This will
