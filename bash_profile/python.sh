@@ -55,7 +55,7 @@ function dj() {
         echo "Provide the name of the existing django project"
     else
         tmux attach -t "$1" || tmux new -s "$1" \; \
-          send-keys "workon $1 && cd ~/Python/$1 && charm . && cd $1" C-m \; \
+          send-keys "workon $1 && cd ~/Python/$1/$1" C-m \; \
           split-window -h \; \
           send-keys "workon $1 && cd ~/Python/$1 && cd $1 && python manage.py runserver" C-m \; \
           select-pane -t 0
