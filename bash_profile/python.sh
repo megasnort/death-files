@@ -29,12 +29,25 @@ EOF
     fi
 }
 
+# go to a certain django project folder and start the virtual env
+function dj() {
+	if [ -z "$1" ]; then
+        echo "Provide the name of the existing django project"
+    else
+    	cd ~/Python/$1/$1
+    	workon $1
+    	xdotool key "ctrl+shift+e"
+    	python manage.py runserver
+    	
+	fi
+}
+
 # Start a tmux session for a named django projec
 # one with the running django dev-server
 # one with the project-root
 # both in the correct virtual env
 
-function dj() {
+function djtmux() {
     if [ -z "$1" ]; then
         echo "Provide the name of the existing django project"
     else
