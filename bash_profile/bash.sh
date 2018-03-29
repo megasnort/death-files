@@ -25,3 +25,7 @@ function ls() {
 
 # prompt
 export PS1="\[\033[33m\]\u\[\033[31m\]@\h\[\033[00m\] \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\]$ "
+
+function backup() {
+	rsync --exclude Dropbox --exclude .dropbox-dist --exclude .adobe --exclude .dropbox --exclude --exclude --exclude .cache --exclude .docker --exclude VirtualBox\ VMs --delete -avxP ~/ /media/stef/stefbackup/home_backup/
+}
