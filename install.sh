@@ -19,3 +19,6 @@ fi
 
 echo "Copying .-files to $HOME_TEMP/"
 find $DIR -maxdepth 1 -type f -name '.*' | xargs -I {} cp {} $HOME_TEMP/
+
+source ~/.bash_profile
+
