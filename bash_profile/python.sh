@@ -37,8 +37,8 @@ function dj() {
     	cd ~/Python/$1/$1
     	workon $1
     	xdotool key "ctrl+shift+e"
+        code ../
     	python manage.py runserver
-    	
 	fi
 }
 
