@@ -10,7 +10,9 @@ function puall() {
     for d in */ ; do
     	cd $d
     	echo "$d"
+
     	if [ -d .git ]; then
+    		git checkout master
     		git pull origin master
     		git push origin master
 		fi;
