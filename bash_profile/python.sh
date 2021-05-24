@@ -36,9 +36,11 @@ function dj() {
     else
     	cd ~/Python/$1/$1
     	workon $1
-    	xdotool key "ctrl+shift+e"
         code ../
+    	xdotool key "ctrl+shift+e"
+    	xdg-open http://localhost:8000
     	python manage.py runserver
+
 	fi
 }
 
