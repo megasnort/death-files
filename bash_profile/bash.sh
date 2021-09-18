@@ -27,7 +27,6 @@ function ls() {
 export PS1="\[\033[33m\]\u\[\033[31m\]@\h\[\033[00m\] \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\]$ "
 
 function backup() {
-	echo 'Start backup as root'
-	dpkg --get-selections > /media/stef/stefbackup/software.txt
-	rsync --exclude Dropbox --exclude .dropbox-dist --exclude .adobe --exclude .dropbox --exclude --exclude --exclude .cache --exclude .docker --exclude VirtualBox\ VMs --delete -avxP ~/ /media/stef/stefbackup/home_backup/
+    rsync  -avxP /media/stef/fotos/fotos/ /media/stef/timeshift/fotos/
+	rsync --exclude ~/Downloads --exclude ~/Music/Notenkrakers --exclude /home/stef/Music/The\ Greatest\ Discovery\:\ New\ Star\ Trek\ Reviewed/ --exclude /home/stef/Music/The\ Greatest\ Generation/ -avxP ~ /media/stef/timeshift/ds9/
 }
