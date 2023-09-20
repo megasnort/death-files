@@ -34,13 +34,22 @@ function dj() {
 	if [ -z "$1" ]; then
         echo "Provide the name of the existing django project"
     else
+        # window 1
     	cd ~/Python/$1/$1
     	workon $1
         code ../
+        
+        # split vertically
     	xdotool key "ctrl+shift+e"
-    	xdg-open http://localhost:8000
-    	python manage.py runserver
+        xdotool key "ctrl+Tab"
+    	 
+    	# split horizontal
+        xdotool key "ctrl+shift+o"
+        #xdotool key "ctrl+Tab"
+        #workon $1
 
+        xdg-open http://localhost:8000
+        python manage.py runserver
 	fi
 }
 
