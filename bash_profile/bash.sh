@@ -28,5 +28,5 @@ export PS1="\[\033[33m\]\u\[\033[31m\]@\h\[\033[00m\] \W\[\033[32m\]\$(parse_git
 
 function backup() {
     rsync  -avxP /media/stef/fotos/fotos/ /media/stef/timeshift/fotos/
-	rsync --exclude .mozilla --exclude .dbus --exclude .dbeaver --exclude Downloads --exclude Python/kidz_django/kidz/new --exclude .cache --exclude .local --exclude .config --exclude .cache --exclude Music/Notenkrakers --exclude Music/The\ Greatest\ Discovery\:\ New\ Star\ Trek\ Reviewed/ --exclude Music/The\ Greatest\ Generation/ -avxP ~ /media/stef/timeshift/ds9/
+	rsync --exclude .steam --exclude .adobe --exclude .googleearth --exclude .mozilla --exclude .dbus --exclude .dbeaver --exclude Downloads --exclude Python/kidz_django/kidz/new --exclude .cache --exclude .local --exclude .config --exclude .cache --exclude Music/Notenkrakers --exclude Music/The\ Greatest\ Discovery\:\ New\ Star\ Trek\ Reviewed/ --exclude Music/The\ Greatest\ Generation/ -avxP ~ /media/stef/timeshift/ds9/
 }
