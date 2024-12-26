@@ -4,7 +4,6 @@
 [user]
 	name = Stef Bastiaansen
 	email = stef@megasnort.com
-
 [alias]
 	a = add
 	ch = checkout
@@ -14,7 +13,7 @@
 	b = branch
 	pl = pull
 	ps = push
- 	m = merge
+	m = merge
 	d = diff
 	r = remote
 	type = cat-file -t
